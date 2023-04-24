@@ -47,7 +47,7 @@ function App() {
 
   return (
     <>
-      <Nav/>
+      <Nav location={location}/>
       <Routes>
         <Route path='/home' element={<HomeContent/>}/>
         <Route path='/destination' element={<DestinationContent/>}/>

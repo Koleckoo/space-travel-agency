@@ -3,7 +3,7 @@ import Logo from '../../assets/shared/logo.svg'
 import './Nav.scss'
 import { useState } from "react";
 
-export default function Nav () {
+export default function Nav ({location}) {
 
     const [navToggle, setNavToggle] = useState(false);
 
@@ -18,23 +18,23 @@ export default function Nav () {
             </div>
             <button onClick={handleToggle} aria-controls="nav__links" aria-expanded={navToggle} className="mobile-nav-toggle "><span className="sr-only">Menu</span></button>
             <ul id="nav__links" data-visible={navToggle} className="nav__links flex">
-                <li className="nav__link active">
-                    <Link className="nav__link active" to='/home'>
+                <li >
+                    <Link className={location === 'home' ? 'nav__link active' : 'nav__link'} to='/home'>
                         <span aria-hidden='true'>00</span>HOME
                     </Link>
                 </li>
                 <li>
-                    <Link className="nav__link" to='/destination'>
+                    <Link className={location === 'destination' ? 'nav__link active' : 'nav__link'} to='/destination'>
                         <span aria-hidden='true'>01</span>DESTINATION
                     </Link>
                 </li>
                 <li>
-                    <Link className="nav__link" to='/crew'>
+                    <Link className={location === 'crew' ? 'nav__link active' : 'nav__link'} to='/crew'>
                         <span aria-hidden='true'>02</span>CREW
                     </Link>
                 </li>
                 <li>
-                    <Link className="nav__link" to='/technology'>
+                    <Link className={location === 'technology' ? 'nav__link active' : 'nav__link'} to='/technology'>
                         <span aria-hidden='true'>03</span>TECHNOLOGY
                     </Link>
                 </li>

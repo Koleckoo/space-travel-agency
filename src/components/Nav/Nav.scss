@@ -3,7 +3,8 @@
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 16px;
     letter-spacing: 2.7px;
-    // order: 2;
+    // ordering was used here to put the after before the logo and the links in the navigation bar
+    // and after pseudo element has position relative, so it is inside the navigation bar inside to them so it is interacting with other elements
     &::after {
         content: '';
         display: block;
@@ -23,6 +24,7 @@
         gap: 2em;
         height: 80%;
         order: 3;
+        
     }
 
     &__link > span {
@@ -40,6 +42,11 @@
     }
     
     
+}
+
+.active {
+    border-bottom: 2px solid var(--color-tertiary);
+    padding-bottom: 33px;
 }
 
 .mobile-nav-toggle {
@@ -62,7 +69,7 @@
     .nav__logo {
         margin-top: 5px;
     }
-    
+
     .nav__links {
         position: fixed;
         height: 100%;
@@ -75,10 +82,19 @@
         // this transform is hiding the panel
         transform: translateX(100%);
         transition: all .75s ease;
+        
     }
     // targeting only the data-visible to show the nav bar
     .nav__links[data-visible = "true"] { 
         transform: translateX(25%);
+    }
+
+    .nav__link {
+        border: none;
+        &:hover {
+            border: none;
+            text-decoration: underline;
+        }
     }
 
     .mobile-nav-toggle {
