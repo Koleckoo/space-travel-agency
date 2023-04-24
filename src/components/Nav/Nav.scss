@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap');
+.nav {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    letter-spacing: 2.7px;
+    // order: 2;
+    &::after {
+        content: '';
+        display: block;
+        position: relative;
+        height: 1px;
+        width: 100%;
+        background-color: hsl(0 0% 100% / 0.3);;
+        order: 2;
+        margin-right: -3rem;
+
+    }
+
+    &__links {
+        align-items: center;
+        background-color: hsl(0 0% 100% / 0.1);
+        backdrop-filter: blur(1rem);
+        gap: 2em;
+        height: 80%;
+        order: 3;
+    }
+
+    &__link > span {
+        font-weight: 700;
+        margin-inline-end: 0.5em;
+    }
+
+    &__logo { 
+        padding-inline: 2em;
+        order: 1;
+        img {
+            min-width: 75px;
+        }
+        
+    }
+    
+    
+}
+
+.mobile-nav-toggle {
+    display: none;
+}
+
+@supports (backdrop-filter: blur(1rem)) {
+    .nav__links { 
+        background-color: hsl(0 0% 100% / 0.1);
+        backdrop-filter: blur(0.5rem);
+    }
+}
+
+
+@media (max-width: 644px) {
+    .nav::after {
+        display: none;
+    }
+
+    .nav__logo {
+        margin-top: 5px;
+    }
+    
+    .nav__links {
+        position: fixed;
+        height: 100%;
+        margin-top: 0;
+        z-index: 100;
+        inset: 0 0 0 30%;
+        flex-direction: column;
+        align-items: baseline;  
+        padding: min(30vh, 10rem) 2em;
+        // this transform is hiding the panel
+        transform: translateX(100%);
+        transition: all .75s ease;
+    }
+    // targeting only the data-visible to show the nav bar
+    .nav__links[data-visible = "true"] { 
+        transform: translateX(25%);
+    }
+
+    .mobile-nav-toggle {
+        display: block;
+        position: absolute;
+        z-index: 999;
+        background: url('../../assets/shared/icon-hamburger.svg');
+        background-repeat: no-repeat;
+        width: 2rem;
+        aspect-ratio: 1;
+        top: 2rem;
+        right: 2rem;
+    }
+    // using to targat only the aria expanded to set change the icon from the burger icon to close icon
+    .mobile-nav-toggle[aria-expanded = 'true'] {
+        background: url('../../assets/shared/icon-close.svg');
+        background-repeat: no-repeat;
+    }
+    .nav__logo::after {
+        display: none;
+    }
+}
+
+@media (min-width: 644px) and (max-width:860px) {
+    // hiding the numbers for the links for media querry
+
+    .nav__links a > span[aria-hidden='true']{
+        display: none;
+    }
+    .nav__logo::after {
+            display: none;
+        }
+
+}
+
+@media (min-width: 644px) {
+    .nav__links {
+        gap: 3rem;
+        padding-block: 2rem;
+        padding-inline: clamp(3rem, 7vw, 10rem)
+    }
+
+    
+}
+
+@media (min-width: 1750px) {
+    .nav {
+        margin-block: 2em;
+        padding-inline: 7em;
+    }
+}
+

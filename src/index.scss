@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Bellefair&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+:root {
+    --color-primary: hsl(230 35% 7%);
+    --color-secondary: hsl(231 77% 90%);
+    --color-tertiary: hsl(0 0% 100%);
+}
+
+body {
+   font-family: 'Bellefair', serif;
+   height: 100vh;
+
+}
