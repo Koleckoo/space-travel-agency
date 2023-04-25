@@ -1,8 +1,27 @@
+
 .home-bg {
-    background: url('./assets/home/background-home-desktop.jpg');
+    background: url('./assets/home/background-home-mobile.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+@media (min-width: 644px) and (max-width:860px) {
+    .home-bg {
+        background: url('./assets/home/background-home-tablet.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@media (min-width: 860px) {
+    .home-bg {
+        background: url('./assets/home/background-home-desktop.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+
 
 .destination-bg {
     background: url('./assets/destination/background-destination-desktop.jpg');
@@ -10,14 +29,64 @@
     background-size: cover;
 }
 
+
+@media (min-width: 644px) and (max-width:860px) {
+    .destination-bg {
+        background: url('./assets/destination/background-destination-tablet.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@media (min-width: 860px) {
+    .destination-bg {
+        background: url('./assets/destination/background-destination-desktop.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
 .crew-bg {
-    background: url('./assets/crew/background-crew-desktop.jpg');
+    background: url('./assets/crew/background-crew-mobile.jpg');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
+
+@media (min-width: 644px) and (max-width:860px) {
+    .crew-bg {
+        background: url('./assets/crew/background-crew-tablet.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@media (min-width: 860px) {
+    .crew-bg {
+        background: url('./assets/crew/background-crew-desktop.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
 .technology-bg {
-    background: url('./assets/technology/background-technology-desktop.jpg');
+    background: url('./assets/technology/background-technology-mobile.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+@media (min-width: 644px) and (max-width:860px) {
+    .technology-bg {
+        background: url('./assets/technology/background-technology-tablet.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@media (min-width: 860px) {
+    .technology-bg {
+        background: url('./assets/technology/background-technology-desktop.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
 }
