@@ -1,0 +1,122 @@
+.destination__container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    padding-block-start: 3rem;
+    place-items: center;
+    color: hsl(var(--color-tertiary));
+    padding-inline: clamp(2rem, 2vw, 10rem);
+}
+
+.destination__header {
+    letter-spacing: 4px;
+    font-size: clamp(1rem, 2vw, 4rem);
+    span {
+        color: hsl(var(--color-secondary)/0.4);
+        margin-inline-end: 0.5em;
+    }
+}
+
+.destination__image {
+    
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
+
+.destination__btns {
+    
+    display: flex;
+    gap: 2rem;
+    font-family: 'Bellefair', serif;
+    font-size: clamp(1rem, 2vw, 4rem);
+    button {
+        letter-spacing: 1px;
+        padding: 10px 0px;
+        &:hover {
+            border-bottom: 2px solid hsl(var(--color-tertiary)/0.2);
+        }
+    }
+}
+
+.destination__info{
+    
+    text-align: center;
+    border-bottom: solid 1px hsl(var(--color-tertiary)/0.1);
+    h2 {
+        font-size: clamp(4rem, 5vw, 10rem);
+    }
+    p {
+        font-size: clamp(1rem, 1vw, 4rem);
+        line-height: 25px;
+        font-family: 'Barlow', sans-serif;
+        color: hsl(var(--color-secondary));
+        letter-spacing: 1px;
+        padding-block-end: 50px;
+    }
+}
+
+.destination__stats {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    text-align: center;
+    div > h4 {
+        color: hsl(var(--color-secondary));
+        font-family: 'Barlow', sans-serif;
+        font-size: clamp(1rem, 1vw, 4rem);
+    }
+    div > h3 {
+        font-size: clamp(2rem, 2vw, 5rem);
+    }
+}
+
+@media (min-width: 644px) and (max-width:860px) {
+    .destination__stats{
+        flex-direction: row;
+    }
+    .destination__header{
+        place-self: start;
+    }
+}
+// grid template areas are very handy you can do the template here and then name all the divs accordingly
+// good to think about the layout beforu you start coding
+@media (min-width: 860px) {
+    .destination__container {
+        grid-template-areas: 
+        ". title title ."
+        ". image tabs ."
+        ". image content ."
+        ". image content2 .";
+        gap: 5rem;
+    }
+
+    .destination__header {
+        grid-area: title;
+        place-self: start;
+    }
+
+    .destination__image{
+        grid-area: image;
+        min-width: 40%;
+        img {
+            max-width: 100%;
+        }
+        
+    }
+    .destination__btns{
+        grid-area: tabs;
+    }
+    .destination__info{
+        grid-area: content;
+        // padding-inline: 6rem;
+        text-align: justify;
+        max-width: 60%;
+
+    }
+    .destination__stats{
+        grid-area: content2;
+        flex-direction: row;
+    }
+}

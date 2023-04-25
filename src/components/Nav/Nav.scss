@@ -11,7 +11,7 @@
         position: relative;
         height: 1px;
         width: 100%;
-        background-color: hsl(0 0% 100% / 0.3);;
+        background-color: hsl(var(--color-tertiary) / 0.3);
         order: 2;
         margin-right: -3rem;
 
@@ -19,11 +19,12 @@
 
     &__links {
         align-items: center;
-        background-color: hsl(0 0% 100% / 0.1);
+        background-color: hsl(var(--color-tertiary)/0.1);
         backdrop-filter: blur(1rem);
         gap: 2em;
         height: 80%;
         order: 3;
+        color: hsl(var(--color-tertiary))
         
     }
 
@@ -45,7 +46,7 @@
 }
 
 .active {
-    border-bottom: 2px solid var(--color-tertiary);
+    border-bottom: 2px solid hsl(var(--color-tertiary));
     padding-bottom: 33px;
 }
 
@@ -55,7 +56,7 @@
 
 @supports (backdrop-filter: blur(1rem)) {
     .nav__links { 
-        background-color: hsl(0 0% 100% / 0.1);
+        background-color: hsl(var(--color-tertiary)/0.1);
         backdrop-filter: blur(0.5rem);
     }
 }

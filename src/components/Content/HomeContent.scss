@@ -3,7 +3,7 @@
     grid-template-columns: 1fr;
     place-items: center;
     text-align: center;
-    color: var(--color-tertiary);
+    color: hsl(var(--color-tertiary));
 }
 
 .home__text {
@@ -21,6 +21,7 @@
     }
 
     p{
+        font-family: 'Barlow', sans-serif;;
         font-size: clamp(1rem, 3vw, 2rem);
         line-height: 32px;
     }
@@ -35,14 +36,14 @@
     border-radius: 50%;
     width: 150px;
     aspect-ratio: 1;
-    background-color: var(--color-tertiary);
-    color: var(--color-primary);
+    background-color: hsl(var(--color-tertiary));
+    color: hsl(var(--color-primary));
     font-size: 1.2rem;
     z-index: 1;
     &::after {
         content: '';
         position: absolute;
-        background-color: hsl(0 0% 100% / 0.1);
+        background-color: hsl(var(--color-tertiary)/0.1);
         width: 100%;
         height: 100%;
         border-radius: 50%;
