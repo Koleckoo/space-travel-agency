@@ -37,7 +37,7 @@
         padding-inline: 2em;
         order: 1;
         img {
-            min-width: 75px;
+            min-width: 50px;
         }
         
     }
@@ -68,7 +68,7 @@
     }
 
     .nav__logo {
-        margin-top: 5px;
+        padding-block-start: 1rem;
     }
 
     .nav__links {

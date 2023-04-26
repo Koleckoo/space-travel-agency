@@ -1,0 +1,128 @@
+.technology__container{
+    display: grid;
+    gap: 5rem;
+    place-items: center;
+    padding-block-start: 3rem;
+    grid-template-areas: 
+    'title'
+    'image'
+    'tabs'
+    'content';
+    place-items: center;
+    color: hsl(var(--color-tertiary))
+}
+
+.technology__header {
+    grid-area: title;
+    letter-spacing: 4px;
+    font-size: clamp(1rem, 2vw, 4rem);
+    span {
+        color: hsl(var(--color-secondary)/0.4);
+        margin-inline-end: 0.5em;
+    }
+}
+.technology__image {
+    grid-area: image;
+    width: 100%;
+    padding-inline: clamp(0.5rem, 1vw, 10rem);
+    img {
+        max-width: 100%;
+        object-fit: cover;
+    }
+    &-portrait {
+        display: none;
+    }
+}
+
+.technology__btns {
+    grid-area: tabs;
+    display: flex;
+    gap: 3rem;
+    .tab {
+        font-family: 'Bellefair', serif;
+        border-radius: 50%;
+        width: 50px;
+        font-size: 1.2rem;
+        aspect-ratio: 1;
+        border: 1px solid hsl(var(--color-secondary)/0.2);
+        &-active {
+            background-color: hsl(var(--color-tertiary));
+            color: black
+        }
+        &:hover {
+            border: 1px solid hsl(var(--color-secondary)/0.4);
+            
+        }
+    }
+    
+}
+
+.technology__info {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    text-align: center;
+    padding-inline: clamp(2rem, 3vw, 10rem);
+    padding-block-end: 5rem;
+    h5{
+        font-size: clamp(1.5rem, 1vw, 4rem);
+        color: hsl(var(--color-secondary)/0.4);
+    }
+    h2 {
+        font-size: clamp(2rem, 3vw, 10rem);
+        white-space: nowrap;
+    }
+    p{
+        font-size: clamp(1rem, 1vw, 4rem);
+        line-height: 25px;
+        font-family: 'Barlow', sans-serif;
+        color: hsl(var(--color-secondary));
+        letter-spacing: 1px;
+        padding-block-end: 50px;
+    }
+}
+
+@media (min-width: 644px) and (max-width:860px) {
+    .technology__header {
+        place-self: start;
+        padding-inline-start: 3rem;
+    }
+}
+
+@media (min-width: 860px) {
+    .technology__container{
+        grid-template-areas: 
+        '. title title title .'
+        '. tabs content image .';
+    }
+    .technology__header {
+        place-self: start;
+    }
+
+    .technology__btns {
+        flex-direction: column;
+        scale: 1.5;
+        justify-content: start;
+        align-items: start;
+    }
+
+    .technology__info{
+        text-align: justify;
+        max-width: 40vw;
+    }
+
+    .technology__image{
+        padding: 0;
+        &-portrait {
+            display: block;
+            img {
+                min-width: 100%;
+            }
+        }
+        &-landscape {
+            display: none;
+        }
+    }
+
+}

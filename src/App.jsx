@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.scss'
 import Nav from './components/Nav/Nav'
 import HomeContent from './components/Content/HomeContent'
-import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import DestinationContent from './components/Content/DestinationContent'
 import CrewContent from './components/Content/CrewContent'
 import TechnologyContent from './components/Content/TechnologyContent'
@@ -49,6 +49,7 @@ function App() {
     <>
       <Nav location={location}/>
       <Routes>
+        <Route exact path='/' element={<Navigate to='/home'/>}/>
         <Route path='/home' element={<HomeContent/>}/>
         <Route path='/destination' element={<DestinationContent/>}/>
         <Route path='/crew' element={<CrewContent/>}/>
